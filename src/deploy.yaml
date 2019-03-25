@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: kochi-webapp
+  name: ignite-webapp
   labels:
-    name: kochi-webapp
+    name: ignite-webapp
     app: demo
 spec:
   containers:
-  - name: kochi-webapp
-    image: $ACR_DNS/kochi-webapp:$BUILD_ID
+  - name: ignite-webapp
+    image: $ACR_DNS/ignite-webapp:$BUILD_ID
     ports:
     - containerPort: 8080
       protocol: TCP
@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: web-api
-        image: $ACR_DNS/kochi-webapi:$BUILD_ID
+        image: $ACR_DNS/ignite-webapi:$BUILD_ID
         ports:
         - containerPort: 9900
           protocol: TCP
@@ -41,9 +41,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: kochi-webapp
+  name: ignite-webapp
   labels:
-    name: kochi-webapp
+    name: ignite-webapp
     app: demo
 spec:
   ports:
@@ -54,7 +54,7 @@ spec:
       name: http
   # label keys and values that must match in order to receive traffic for this service
   selector:
-    name: kochi-webapp
+    name: ignite-webapp
     app: demo
   type: LoadBalancer
 ---
