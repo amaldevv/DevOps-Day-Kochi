@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet
+FROM mcr.microsoft.com/dotnet/core-nightly/aspnet:2.2
 
 ENV ASPNETCORE_URLS  "http://+:9900"
 
