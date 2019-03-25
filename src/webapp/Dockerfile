@@ -1,4 +1,4 @@
-FROM node:8
+FROM  stefanscherer/node-windows
 
 # Create app directory
 RUN mkdir -p /usr/src/app
