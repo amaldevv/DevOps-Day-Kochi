@@ -1,7 +1,7 @@
 FROM  stefanscherer/node-windows
 
 # Create app directory
-RUN mkdir  /app
+
 WORKDIR /app
 
 # Install app dependencies
